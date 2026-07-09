@@ -6,6 +6,7 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from "@/components/icons";
+import { Spotlight } from "@/components/spotlight";
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
         aria-hidden
         className="absolute left-1/2 top-1/3 -z-10 h-[24rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground/[0.05] blur-[100px]"
       />
+      {/* Cursor spotlight over the grid */}
+      <Spotlight />
 
       <section className="flex w-full max-w-sm flex-col items-center text-center">
         <div className="animate-in fade-in zoom-in-95 fill-mode-backwards duration-700">
