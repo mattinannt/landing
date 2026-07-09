@@ -63,12 +63,14 @@ export function Spotlight() {
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-500"
+      className="spotlight-mask pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-500"
     >
-      {/* Brighter grid lines, revealed only around the cursor */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.16)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.16)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(260px_circle_at_var(--x,50%)_var(--y,50%),black,transparent)]" />
-      {/* Soft glow following the cursor */}
-      <div className="absolute inset-0 bg-[radial-gradient(360px_circle_at_var(--x,50%)_var(--y,50%),rgba(255,255,255,0.055),transparent_70%)]" />
+      {/* Soft neon bloom behind the lines */}
+      <div className="absolute inset-0 opacity-60 blur-[6px]">
+        <div className="spotlight-grid absolute inset-0" />
+      </div>
+      {/* Crisp glowing grid lines */}
+      <div className="spotlight-grid absolute inset-0 opacity-80" />
     </div>
   );
 }
